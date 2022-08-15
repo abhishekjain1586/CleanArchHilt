@@ -7,31 +7,30 @@ import com.example.cleanarchhilt.home.domain.usecase.GetLaunchesUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
-import dagger.hilt.components.SingletonComponent
+import dagger.hilt.android.components.ViewModelComponent
+import dagger.hilt.android.scopes.ViewModelScoped
 import retrofit2.Retrofit
-import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ViewModelComponent::class)
 object HomeModule {
 
-    @Singleton
+    @ViewModelScoped
     @Provides
     fun provideLaunchRemoteDataSource(retrofit: Retrofit) =
         retrofit.create(LaunchRemoteDataSource::class.java)
 
-    @Singleton
+    @ViewModelScoped
     @Provides
     fun provideLaunchRepository(launchesRemoteDataSource: LaunchRemoteDataSource) =
         LaunchRepository(launchesRemoteDataSource = launchesRemoteDataSource)
 
-    @Singleton
+    @ViewModelScoped
     @Provides
     fun provideCompanyDetailUseCase(launchRepository: LaunchRepository) =
         GetCompanyDetailUseCase(launchRepository = launchRepository)
 
-    @Singleton
+    @ViewModelScoped
     @Provides
     fun provideLaunchesUseCase(launchRepository: LaunchRepository) =
         GetLaunchesUseCase(launchRepository = launchRepository)
