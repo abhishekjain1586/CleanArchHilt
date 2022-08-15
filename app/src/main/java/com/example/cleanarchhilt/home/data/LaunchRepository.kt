@@ -4,8 +4,8 @@ import com.example.cleanarchhilt.common.data.repository.BaseRepository
 import com.example.cleanarchhilt.common.network.Resource
 import com.example.cleanarchhilt.home.domain.model.CompanyDetail
 import dagger.hilt.android.scopes.ViewModelScoped
-import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
+import kotlinx.coroutines.flow.Flow
 
 @ViewModelScoped
 class LaunchRepository @Inject constructor(

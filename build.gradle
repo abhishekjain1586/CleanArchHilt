@@ -2,7 +2,7 @@
 buildscript {
     dependencies {
         classpath ("com.google.dagger:hilt-android-gradle-plugin:2.38.1")
-        classpath ("org.jlleitschuh.gradle:ktlint-gradle:7.1.0") //ktlint
+        classpath ("org.jlleitschuh.gradle:ktlint-gradle:10.3.0") //ktlint
     }
 }
 
@@ -10,7 +10,7 @@ plugins {
     id 'com.android.application' version '7.2.1' apply false
     id 'com.android.library' version '7.2.1' apply false
     id 'org.jetbrains.kotlin.android' version '1.7.0' apply false
-    id "org.jlleitschuh.gradle.ktlint" version "7.1.0" //ktlint
+    id "org.jlleitschuh.gradle.ktlint" version "10.3.0" //ktlint
 }
 
 task clean(type: Delete) {

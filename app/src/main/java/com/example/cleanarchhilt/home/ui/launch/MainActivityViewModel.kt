@@ -10,11 +10,11 @@ import com.example.cleanarchhilt.home.domain.model.Launch
 import com.example.cleanarchhilt.home.domain.usecase.GetCompanyDetailUseCase
 import com.example.cleanarchhilt.home.domain.usecase.GetLaunchesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @HiltViewModel
 class MainActivityViewModel @Inject constructor(

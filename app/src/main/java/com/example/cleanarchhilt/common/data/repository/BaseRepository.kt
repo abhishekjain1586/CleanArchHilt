@@ -13,7 +13,7 @@ abstract class BaseRepository {
     fun <T, R> toResourceFlow(response: Response<T>, transform: (T) -> R): Flow<Resource<R>> {
         return flow<Resource<R>> {
             if (response.isSuccessful) {
-                response.body()?.let { emit(Resource.Success(data =  transform(it))) }
+                response.body()?.let { emit(Resource.Success(data = transform(it))) }
             } else {
                 response.errorBody()?.let {
                     emit(Resource.Failure(ApiException(message = response.errorBody().toString())))
@@ -21,5 +21,4 @@ abstract class BaseRepository {
             }
         }.flowOn(Dispatchers.IO)
     }
-
 }
